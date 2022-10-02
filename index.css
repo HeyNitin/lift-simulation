@@ -1,0 +1,17 @@
+#form > *{
+    display: block;
+    width: 20rem;
+    margin: .5rem 1rem;
+}
+
+.floor{
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.floor-layout{
+    border-bottom: 1px solid black;
+    width: 30rem;
+    height: 5rem;
+}
