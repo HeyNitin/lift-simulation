@@ -1,17 +1,25 @@
-#form > *{
-    display: block;
-    width: 20rem;
-    margin: .5rem 1rem;
+#form > * {
+	display: block;
+	width: 20rem;
+	margin: 0.5rem 1rem;
 }
 
-.floor{
+.floor {
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
+}
+
+.floor-layout {
+	border-bottom: 1px solid black;
+	width: 30rem;
+	height: 5rem;
     display: flex;
-    align-items: baseline;
     gap: 1rem;
 }
 
-.floor-layout{
-    border-bottom: 1px solid black;
-    width: 30rem;
-    height: 5rem;
+.lift {
+	background-color: red;
+	width: 4rem;
+	height: 5rem;
 }

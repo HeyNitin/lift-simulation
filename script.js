@@ -27,6 +27,12 @@ const createFloor = ({
 			</div>`;
 };
 
+const createLifts = (lifts) =>{
+	for(let i=0; i<lifts; i++){
+		layout.children[layout.children.length -1].children[0].innerHTML += `<div class="lift"></div>`
+	}
+}
+
 const createLayout = (floors, lifts) => {
 	layout.innerHTML = "";
 	for (let i = floors; i >= 1; i--) {
@@ -38,6 +44,7 @@ const createLayout = (floors, lifts) => {
 			layout.innerHTML += createFloor({ floorNumber: i });
 		}
 	}
+	createLifts(lifts)
 };
 
 const submitHandler = (e) => {
