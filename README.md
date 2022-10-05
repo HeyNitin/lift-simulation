@@ -9,7 +9,7 @@
 - VanillaJs
 
 # User Interface of the App
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/23723159/194121400-b52f3cde-b793-45ce-b195-78af8be792d8.png">
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/23723159/194126622-af6def8f-819c-4960-80c8-2911c596caeb.png">
 
 # Features Included
 
