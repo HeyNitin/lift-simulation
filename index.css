@@ -1,11 +1,24 @@
-#form > * {
+@import "responsive.css";
+
+body {
+	margin: 2rem;
+}
+
+.form {
+	width: 20rem;
+	margin: auto;
+}
+
+.form > * {
 	display: block;
 	width: 20rem;
 	margin: 0.5rem 1rem;
+	box-sizing: border-box;
 }
 
-#layout {
+.layout {
 	position: relative;
+	margin: 2rem 0rem;
 }
 
 .floor {
@@ -16,7 +29,7 @@
 
 .floor-layout {
 	border-bottom: 1px solid black;
-	width: 30rem;
+	width: 100vw;
 	height: 6rem;
 	display: flex;
 	flex-direction: column;

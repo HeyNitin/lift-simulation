@@ -109,7 +109,6 @@ const makeLiftAvailable = (liftNumber, remainingFloors) => {
 const callLift = (floorNumber) => {
 	let calledLift = isLiftPresent(floorNumber)[0];
 	if (calledLift?.reached !== false) {
-		console.log("ran");
 		if (!calledLift) {
 			calledLift = findClosestActiveLift(floorNumber);
 		}
