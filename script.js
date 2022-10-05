@@ -5,7 +5,16 @@ const lifts = document.getElementsByClassName("lift");
 let Alllifts = [];
 let remainingFloors = [];
 
-const createFloor = ({
+const isLiftPresent = (floor) =>
+	Alllifts.filter((item) => item.currentFloor === floor);
+
+const findLift = (liftNumber) =>
+	Alllifts.filter((item) => item.liftNumber === liftNumber)[0];
+
+const isReached = (liftNumber) =>
+	Alllifts.filter((item) => item.liftNumber === liftNumber)[0].reached;
+
+const createFloors = ({
 	floorNumber,
 	firstFloor = false,
 	lastFloor = false,
@@ -31,15 +40,6 @@ const createFloor = ({
 			</div>`;
 };
 
-const isLiftPresent = (floor) =>
-	Alllifts.filter((item) => item.currentFloor === floor);
-
-const findLift = (liftNumber) =>
-	Alllifts.filter((item) => item.liftNumber === liftNumber)[0];
-
-const isReached = (liftNumber) =>
-	Alllifts.filter((item) => item.liftNumber === liftNumber)[0].reached;
-
 const findClosestActiveLift = (floor) => {
 	const filteredLifts = Alllifts.filter((lift) => lift.available);
 	if (filteredLifts.length) {
@@ -53,6 +53,7 @@ const findClosestActiveLift = (floor) => {
 		return false;
 	}
 };
+
 const updateLifts = (liftNumber, newFloor) => {
 	const floorDifference = Math.abs(
 		findLift(liftNumber).currentFloor - newFloor
@@ -108,7 +109,7 @@ const makeLiftAvailable = (liftNumber, remainingFloors) => {
 const callLift = (floorNumber) => {
 	let calledLift = isLiftPresent(floorNumber)[0];
 	if (calledLift?.reached !== false) {
-		console.log('ran')
+		console.log("ran");
 		if (!calledLift) {
 			calledLift = findClosestActiveLift(floorNumber);
 		}
@@ -125,11 +126,11 @@ const createLayout = (floors, lifts) => {
 	layout.innerHTML = "";
 	for (let i = floors; i >= 1; i--) {
 		if (i === 1) {
-			layout.innerHTML += createFloor({ floorNumber: i, firstFloor: true });
+			layout.innerHTML += createFloors({ floorNumber: i, firstFloor: true });
 		} else if (i === floors) {
-			layout.innerHTML += createFloor({ floorNumber: i, lastFloor: true });
+			layout.innerHTML += createFloors({ floorNumber: i, lastFloor: true });
 		} else {
-			layout.innerHTML += createFloor({ floorNumber: i });
+			layout.innerHTML += createFloors({ floorNumber: i });
 		}
 	}
 	for (let i = 0; i < lifts; i++) {
@@ -147,7 +148,12 @@ const submitHandler = (e) => {
 	e.preventDefault();
 	const floors = Number(form[0].value);
 	const lifts = Number(form[1].value);
-	createLayout(floors, lifts);
+
+	if (floors >= 2 && lifts >= 1) {
+		createLayout(floors, lifts);
+	} else {
+		alert("Minimum 2 floors and 1 lift required");
+	}
 };
 
 form.addEventListener("submit", submitHandler);
