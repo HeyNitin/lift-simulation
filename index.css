@@ -4,7 +4,7 @@
 	margin: 0.5rem 1rem;
 }
 
-#layout{
+#layout {
 	position: relative;
 }
 
@@ -27,8 +27,26 @@
 .lift {
 	position: absolute;
 	bottom: 0;
-	background-color: gray;
+	background-color: rgb(223, 215, 215);
 	width: 4rem;
 	height: 5rem;
-	border: 1px solid black;
+	border: 2px solid black;
+	transition: bottom 2s;
+}
+
+.door {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	background-color: red;
+}
+
+.left-door {
+	left: 0;
+	transition: left 2.5s;
+}
+
+.right-door {
+	right: 0;
+	transition: right 2.5s;
 }
