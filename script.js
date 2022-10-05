@@ -36,7 +36,7 @@ const createFloors = ({
 							: ""
 					}
 				</div>
-				<div class="floor-number">Floor ${floorNumber}</div>
+				<div class="floor-number">${floorNumber}</div>
 			</div>`;
 };
 

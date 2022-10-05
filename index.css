@@ -1,4 +1,4 @@
-@import "responsive.css";
+@import "responsiveness.css";
 
 body {
 	margin: 2rem;
@@ -50,7 +50,7 @@ body {
 	position: absolute;
 	height: 100%;
 	width: 50%;
-	background-color: red;
+	background-color: gray;
 }
 
 .left-door {
