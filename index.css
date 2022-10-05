@@ -31,7 +31,6 @@
 	width: 4rem;
 	height: 5rem;
 	border: 2px solid black;
-	transition: bottom 2s;
 }
 
 .door {
@@ -43,10 +42,12 @@
 
 .left-door {
 	left: 0;
-	transition: left 2.5s;
+	transition: width 2.5s;
+	border-right: 1px solid black;
 }
 
 .right-door {
 	right: 0;
-	transition: right 2.5s;
+	transition: width 2.5s;
+	border-left: 1px solid black;
 }
